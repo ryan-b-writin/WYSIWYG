@@ -1,17 +1,44 @@
+input {
+height: 150px;
+width: 400px;
+margin: .5% 2%;
+}
+
 .card {
   border: 1px solid black;
-  width: 200px;
-  min-height: 500px;
+  width: 250px;
+  min-height: 800px;
   padding: 5%;
   float: left;
   text-align: center;
+  box-sizing: border-box;
+  margin: 2%;
 }
 
-.card h3 {
-  font-size: 10px;
+.card section {
+  font-size: 12px;
+  padding: 2%;
+}
+
+.card footer{
+  font-size: 9px;
+  padding: 2%;
 }
 
 .card img {
   max-width: 150px;
   height: 200px;
+  padding: 2%;
+}
+
+.even {
+  background-color: lightyellow;
+}
+
+.odd {
+  background-color: lightblue;
+}
+
+.selected {
+  border: 5px dotted blue;
 }
