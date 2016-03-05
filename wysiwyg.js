@@ -1,4 +1,6 @@
 var outputTarget = document.getElementById("outputTarget");
+var cards = document.getElementsByClassName("card");
+console.log("card", cards );
 var famous = [
   {
     title: "Your Buddy",
@@ -31,12 +33,42 @@ var famous = [
     }
   }
 ];
-
+//set up initial cards
 var init = function(){
+  //create cards
   for (var i=0;i<famous.length;i++) {
-  cardString = "<article class='card'> <h3>"+famous[i].title+"</h3> <img src='"+famous[i].image+"'> <h6>B. "+famous[i].lifespan.birth+"<br> D. "+famous[i].lifespan.death+"</h6> <h3>Name: "+famous[i].name+"</h3> <h3>Bio: "+famous[i].bio+"</h3> </article>";
-  outputTarget.innerHTML += cardString
+
+    //prepare light blue background for odd numbered cards. light yellow for evens
+    var evenOdd
+    if (i % 2 === 0) {
+      evenOdd = "odd"
+    } else {
+      evenOdd = "even"
+    }
+
+    cardString = "<person class='card "+evenOdd+"'> <header>"+famous[i].title+"<br>Name: "+famous[i].name+"</header> <section> <img src='"+famous[i].image+"'><br>Bio: "+famous[i].bio+"</section> <footer>B. "+famous[i].lifespan.birth+"<br> D. "+famous[i].lifespan.death+"</footer> </person>";
+    outputTarget.innerHTML += cardString
   }
 };
 
 init();
+
+//add event listener to .card class
+for (var i=0;i<cards.length;i++) {
+  cards[i].addEventListener("click", function(){
+
+    //remove selected from all cards
+    for (var j=0;j<cards.length;j++) {
+      cards[j].classList.remove("selected");
+    };
+
+    //add selected to clicked card
+    this.classList.add("selected");
+    textInput.focus();
+  })
+};
+
+
+
+
+
