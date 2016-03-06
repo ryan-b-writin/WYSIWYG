@@ -1,6 +1,7 @@
 var outputTarget = document.getElementById("outputTarget");
 var cards = document.getElementsByClassName("card");
-console.log("card", cards );
+var inputField = document.getElementById("textInput");
+var thisBio = [];
 var famous = [
   {
     title: "Your Buddy",
@@ -46,7 +47,7 @@ var init = function(){
       evenOdd = "even"
     }
 
-    cardString = "<person class='card "+evenOdd+"'> <header>"+famous[i].title+"<br>Name: "+famous[i].name+"</header> <section> <img src='"+famous[i].image+"'><br>Bio: "+famous[i].bio+"</section> <footer>B. "+famous[i].lifespan.birth+"<br> D. "+famous[i].lifespan.death+"</footer> </person>";
+    cardString = "<person class='card "+evenOdd+"'> <header>"+famous[i].title+"<br>Name: "+famous[i].name+"</header> <section> <img src='"+famous[i].image+"'><br>Bio: <div class='bio'>"+famous[i].bio+"</div></section> <footer>B. "+famous[i].lifespan.birth+"<br> D. "+famous[i].lifespan.death+"</footer> </person>";
     outputTarget.innerHTML += cardString
   }
 };
@@ -65,10 +66,17 @@ for (var i=0;i<cards.length;i++) {
     //add selected to clicked card
     this.classList.add("selected");
     textInput.focus();
+
+    // get reference to selected bio for editing
+    thisBio = this.getElementsByClassName("bio");
   })
 };
 
 
+//add event listener to input 
+inputField.addEventListener("keypress", function(){
+  thisBio[0].innerHTML = inputField.value;
+})
 
 
 
