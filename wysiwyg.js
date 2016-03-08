@@ -24,7 +24,7 @@ var famous = [
     }
   },
   {
-    title: "Looks like you're writing my entry.",
+    title: "It looks like you're writing my entry.",
     name: "Clippy",
     bio: "The default assistant in the English Windows version was named Clippit (though Clippy is a common nickname), after a paperclip. The character was designed by Kevan J. Atteberry. Clippy was the default and by far the most notable Assistant (partly because in many cases the setup CD was required to install the other assistants), which also led to it being called simply the Microsoft Paperclip.",
     image: "https://upload.wikimedia.org/wikipedia/en/d/db/Clippy-letter.PNG",
@@ -73,9 +73,14 @@ for (var i=0;i<cards.length;i++) {
 };
 
 
-//add event listener to input 
-inputField.addEventListener("keypress", function(){
+
+//add text entry event listener to input 
+inputField.addEventListener("keyup", function(e){
   thisBio[0].innerHTML = inputField.value;
+  console.log("e", e.code);
+  if (e.code === "Enter") {
+    inputField.value = "";
+  }
 })
 
 

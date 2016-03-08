@@ -1,4 +1,4 @@
-input {
+textarea {
 height: 150px;
 width: 400px;
 margin: .5% 2%;
@@ -6,7 +6,7 @@ margin: .5% 2%;
 
 .card {
   border: 1px solid black;
-  width: 250px;
+  width: 25%;
   min-height: 800px;
   padding: 5%;
   float: left;
