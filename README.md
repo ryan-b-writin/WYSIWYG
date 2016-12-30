@@ -1,9 +1,9 @@
 ## How To Use
 View this page at: http://www.midnightthunder.net/exercises/wysiwyg/index.html  
-1. Take a moment to learn about internet mascot history.
-1. Should you wish to edit a bio, click on the card you want to edit. The selected card will display a dashed blue border.
-1. Type into the text area at top left and the selected card will be updated with each keystroke.
-1. Press enter at any time to clear the text area.
+1. Take a moment to learn about internet mascot history.  
+1. Should you wish to edit a bio, click on the card you want to edit. The selected card will display a dashed blue border.  
+1. Type into the text area at top left and the selected card will be updated with each keystroke.  
+1. Press enter at any time to clear the text area.  
 
 ## Instructions
 
